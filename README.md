@@ -7,7 +7,11 @@
   $ sudo apt-get install nodejs
 
   ```
-  2. install required package 
+  2. install required package  
   ```
   npm install request 
+  ```
+  3. run script
+  ```
+  nodejs ./plat.js
   ```
