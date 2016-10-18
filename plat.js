@@ -6,7 +6,8 @@ var request = require('request');
 var g = {
   id:'',
   pw:'',
-  hostgroups: '["c01.i01"]'
+  hostgroups: '["c01.i01"]',
+  metric: 'cpu.idle'
 }
 
 
@@ -38,7 +39,7 @@ var hostgroupHandler = function (error, response, body) {
     var json = JSON.parse(body)
     var query = json.data.hosts.map(function (value) {
       var ret = {
-          counter: "cpu.idle",
+          counter: g.metric,
           endpoint: value.hostname
       }
       return ret

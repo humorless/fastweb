@@ -11,7 +11,8 @@
   ```
   npm install request 
   ```
-  3. run script
+  3. fill suitable parameters into scripts
+  4. run script
   ```
   nodejs ./plat.js
   ```
