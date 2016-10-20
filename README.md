@@ -9,7 +9,7 @@
   ```
   2. Install required package  
   ```
-  cd aggregate
+  cd aggregate  
   npm install
   ```
   3. Fill suitable parameters in script `index.js`  
