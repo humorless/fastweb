@@ -9,8 +9,8 @@
   ```
   2. Install required package  
   ```
-  git clone https://github.com/humorless/fastweb.git 
-  cd fastweb 
+  git clone https://github.com/humorless/fastweb.git
+  cd fastweb
   cd aggregate && npm install
   ```
   3. Fill suitable parameters in script `index.js`  
