@@ -1,12 +1,13 @@
 #!/usr/bin/nodejs
 
 var request = require('request');
+var shell = require('shelljs/global');
 
 // Set real parameters
 var g = {
   id:'',
   pw:'',
-  e: "cnc-sd-027-209-182-025"
+  e: "docker-agent"
 }
 
 var localURL = {
@@ -14,16 +15,31 @@ var localURL = {
   goAPIHost: "http://10.20.30.40:1234/api/v1"
 }
 
-var URL = {
-  query: "http://query.owl.fastweb.com.cn",
-  goAPIHost: "http://owl.fastweb.com.cn/api/v1"
-}
+//var URL = {
+//  query: "http://query.owl.fastweb.com.cn",
+//  goAPIHost: "http://owl.fastweb.com.cn/api/v1"
+//}
+var URL = localURL
 
 var graphInfoHandler = function (error, response, body) {
   if (!error && response.statusCode == 200) {
     var json = JSON.parse(body)
     var filenames = json.map(function(t){ return t.filename })
-    console.log(filenames)
+    //console.log(filenames)
+    //console.log(json)
+
+    var hostDIR = '.'
+    filenames.map( function(fname) {
+      var sourceFile = 'graph:' + fname
+      var cmd_str = ' docker cp ' + sourceFile + ' '+ hostDIR
+      //console.log(cmd_str)
+      // Run external tool synchronously
+      if (exec(cmd_str).code !== 0) {
+        echo('Error: docker cp failed');
+        exit(1);
+      }
+      return null
+    })
   } else {
     console.log(error)
   }
