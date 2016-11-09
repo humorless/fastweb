@@ -2,12 +2,16 @@
 
 var request = require('request');
 var shell = require('shelljs/global');
-
+var path = require('path');
 // Set real parameters
 var g = {
   id:'',
   pw:'',
-  e: "docker-agent"
+  e: "docker-agent",   // endpoint name
+  localDIR: './RRD',
+  outDIR: './RRDout',
+  dockerName: 'graph',
+  timestampMax: 1414782122
 }
 
 var localURL = {
@@ -28,16 +32,21 @@ var graphInfoHandler = function (error, response, body) {
     //console.log(filenames)
     //console.log(json)
 
-    var hostDIR = '.'
     filenames.map( function(fname) {
-      var sourceFile = 'graph:' + fname
-      var cmd_str = ' docker cp ' + sourceFile + ' '+ hostDIR
+      var sourceFile = g.dockerName + ':' + fname
+      var cmd_str = ' docker cp ' + sourceFile + ' '+ g.localDIR
       //console.log(cmd_str)
       // Run external tool synchronously
       if (exec(cmd_str).code !== 0) {
         echo('Error: docker cp failed');
         exit(1);
       }
+      // rrdtool dump in.rrd  | ./remove_samples_newer_than.py 1414782122 | rrdtool restore - out.rrd
+      var in_rrd_file = g.localDIR + '/' + path.basename(fname)
+      var out_rrd_file = g.outDIR + '/' + path.basename(fname)
+      var timestampMax = g.timestampMax
+      var cmd_rrd_remove = 'rrdtool dump ' + in_rrd_file + ' | ' + './remove_samples_newer_than.py ' + timestampMax + ' | rrdtool restore - ' + out_rrd_file
+      console.log(cmd_rrd_remove)
       return null
     })
   } else {
