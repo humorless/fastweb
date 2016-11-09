@@ -46,7 +46,13 @@ var graphInfoHandler = function (error, response, body) {
       var out_rrd_file = g.outDIR + '/' + path.basename(fname)
       var timestampMax = g.timestampMax
       var cmd_rrd_remove = 'rrdtool dump ' + in_rrd_file + ' | ' + './remove_samples_newer_than.py ' + timestampMax + ' | rrdtool restore - ' + out_rrd_file
-      console.log(cmd_rrd_remove)
+
+      //console.log(cmd_rrd_remove)
+
+      if (exec(cmd_rrd_remove).code !== 0) {
+        echo('Error: docker cp failed');
+        exit(1);
+      }
       return null
     })
   } else {
