@@ -5,7 +5,7 @@ for the error `ImportError: no module named request`
 
 in Ubuntu
 ```
-sudo apt-get install request`
+sudo apt-get install request
 ```
 
 
