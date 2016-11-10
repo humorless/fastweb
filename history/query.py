@@ -113,8 +113,6 @@ if __name__ == "__main__":
         print "usage: ./query.py  [platformName]"
         print "example: ./query.py  c01.i01"
         sys.exit(1) 
-        #print "usage: aggregate.py [timestamp] [platformName]"
-        #print "example: aggregate.py 1478764076 c01.i01"
     ts = int(time.time()) # input
     platform = sys.argv[1]     # input
     user = ""      # data
