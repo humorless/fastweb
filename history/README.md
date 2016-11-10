@@ -17,3 +17,7 @@ yum install python-pip
 pip install requests
 
 ```
+
+# setup 
+
+fill in the `username`, `password` in `secret.yaml`
