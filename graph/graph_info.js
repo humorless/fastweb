@@ -30,7 +30,9 @@ var URL = {
 var graphInfoHandler = function (error, response, body) {
   if (!error && response.statusCode == 200) {
     var json = JSON.parse(body)
-    var filenames = json.map(function(t){ return t })
+    console.log(json)
+    exit(0)
+    var filenames = json.map(function(t){ return t.filename })
     console.log(filenames)
     //console.log(json)
     exit(0)
