@@ -5,7 +5,8 @@ import requests
 import time
 import json
 import sys
-
+import os.path
+import yaml
 
 def login(name, password):
     url = "http://owl.fastweb.com.cn/api/v1/auth/login"
@@ -72,11 +73,23 @@ def history(user, sig, starTs, endTs, platform, hostnameFilters):
     }
     print json.dumps(final)
 
+def readConf():
+    if os.path.isfile("secret.yaml"):
+        pass
+    else:
+        return {}
+
+    with open("secret.yaml", 'r') as stream:
+        try:
+            return yaml.load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print "usage: history.py [timestampStart] [timestampEnd] [platformName]"
-        print "example: history.py 1478700000 1478764076 c01.i01"
+        print "usage: ./history.py [timestampStart] [timestampEnd] [platformName]"
+        print "example: ./history.py 1478700000 1478764076 c01.i01"
         sys.exit(1) 
     #ts = int(time.time()) # input
     #platform = "c06.i06"  # input
@@ -85,6 +98,10 @@ if __name__ == "__main__":
     platform = sys.argv[3]     # input
     user = ""      # data
     password = ""    # data
+    conf = readConf()
+    if len(conf) == 2:
+        user = conf["user"]
+        password = conf["pass"]
     sig = login(user, password) 
     hostnameFilters = hostgroup2hostnames(user, sig, platform)
     history(user, sig, startTs, endTs, platform, hostnameFilters)

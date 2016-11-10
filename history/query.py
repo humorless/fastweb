@@ -5,6 +5,8 @@ import requests
 import time
 import json
 import sys
+import os.path
+import yaml
 
 local = {
     "login" : "http://10.20.30.40:1234/api/v1/auth/login",
@@ -107,6 +109,18 @@ def formatting(raw, platform, endpoints, ts):
     } 
     return json.dumps(final)
 
+def readConf():
+    if os.path.isfile("secret.yaml"):
+        pass
+    else:
+        return {}
+
+    with open("secret.yaml", 'r') as stream:
+        try:
+            return yaml.load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print "query.py returns the 5 minute average of five platform metrics."
@@ -117,6 +131,10 @@ if __name__ == "__main__":
     platform = sys.argv[1]     # input
     user = ""      # data
     password = ""    # data
+    conf = readConf()
+    if len(conf) == 2:
+        user = conf["user"]
+        password = conf["pass"]
     sig = login(user, password)
     endpoints = hostgroup2hostnames(user, sig, platform)
     raw = aggregate(user, sig, (ts - 300) , ts, endpoints) # 5mins ago  - now 
