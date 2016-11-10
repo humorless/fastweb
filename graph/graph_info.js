@@ -7,11 +7,12 @@ var path = require('path');
 var g = {
   id:'',
   pw:'',
-  e: "docker-agent",   // endpoint name
+//  e: 'docker-agent',
+  e: "cnc-sd-027-209-182-025",   // endpoint name
   localDIR: './RRD',
   outDIR: './RRDout',
   dockerName: 'graph',
-  timestampMax: 1414782122
+  timestampMax: 1478748900
 }
 
 var localURL = {
@@ -19,23 +20,24 @@ var localURL = {
   goAPIHost: "http://10.20.30.40:1234/api/v1"
 }
 
-//var URL = {
-//  query: "http://query.owl.fastweb.com.cn",
-//  goAPIHost: "http://owl.fastweb.com.cn/api/v1"
-//}
-var URL = localURL
+var URL = {
+  query: "http://query.owl.fastweb.com.cn",
+  goAPIHost: "http://owl.fastweb.com.cn/api/v1"
+}
+
+//var URL = localURL
 
 var graphInfoHandler = function (error, response, body) {
   if (!error && response.statusCode == 200) {
     var json = JSON.parse(body)
-    var filenames = json.map(function(t){ return t.filename })
-    //console.log(filenames)
+    var filenames = json.map(function(t){ return t })
+    console.log(filenames)
     //console.log(json)
-
+    exit(0)
     filenames.map( function(fname) {
       var sourceFile = g.dockerName + ':' + fname
       var cmd_str = ' docker cp ' + sourceFile + ' '+ g.localDIR
-      //console.log(cmd_str)
+      console.log(cmd_str)
       // Run external tool synchronously
       if (exec(cmd_str).code !== 0) {
         echo('Error: docker cp failed');
