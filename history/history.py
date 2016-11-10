@@ -32,15 +32,19 @@ def hostgroup2hostnames(user, sig, hostgroup):
         res.append(i["hostname"])
     return res
 
-def history(user, sig, ts, platform, hostnameFilters):
+def history(user, sig, starTs, endTs, platform, hostnameFilters):
     url = "http://owl.fastweb.com.cn/api/v2/portal/eventcases/get"
+    if startTs >= endTs:
+        print " start timestamp bigger than end timestamp"
+        exit(1)
+    
     payload = {
         "status": "PROBLEM,OK",
         "process": "ALL",
         "includeEvents": True,
         "limit": 2000,
-        "startTime": ts - 86400,
-        "endTime":   ts,
+        "startTime": startTs,
+        "endTime":   endTs,
         "cName": user,
         "cSig": sig
     } 
@@ -63,23 +67,24 @@ def history(user, sig, ts, platform, hostnameFilters):
     final = {
         "platform": platform,
         "count": len(result),
-        "timestamp": ts,
+        "timestamp": [startTs, endTs],
         "result": result
     }
     print json.dumps(final)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        print "usage: history.py [timestamp] [platformName]"
-        print "example: history.py 1478764076 c01.i01"
+    if len(sys.argv) != 4:
+        print "usage: history.py [timestampStart] [timestampEnd] [platformName]"
+        print "example: history.py 1478700000 1478764076 c01.i01"
         sys.exit(1) 
     #ts = int(time.time()) # input
     #platform = "c06.i06"  # input
-    ts = int(sys.argv[1])      # input
-    platform = sys.argv[2]     # input
+    startTs = int(sys.argv[1])      # input
+    endTs = int(sys.argv[2])      # input
+    platform = sys.argv[3]     # input
     user = ""      # data
     password = ""    # data
     sig = login(user, password) 
     hostnameFilters = hostgroup2hostnames(user, sig, platform)
-    history(user, sig, ts, platform, hostnameFilters)
+    history(user, sig, startTs, endTs, platform, hostnameFilters)
