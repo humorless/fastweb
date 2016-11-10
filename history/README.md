@@ -1,4 +1,4 @@
-# trouble shooting 
+# trouble shooting
 
 for the error `ImportError: no module named request`
 
@@ -13,7 +13,7 @@ in CentOS
 
 ```
 yum install python-setuptools
-easy_install install pip
+yum install python-pip
 pip install requests
 
 ```
