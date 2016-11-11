@@ -117,7 +117,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print "http_get_time.py returns the 5 minute data of the platform metric http.get.time."
         print "usage: ./http_get_time.py  [platformName]"
-        print "example: ./http_get_time.py  c01.i01"
+        print "example: ./http_get_time.py  c01.i07"
         sys.exit(1) 
     ts = int(time.time()) # input
     platform = sys.argv[1]     # input
