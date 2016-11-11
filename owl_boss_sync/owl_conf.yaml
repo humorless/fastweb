@@ -1,0 +1,456 @@
+c01i01_vfcc:
+    - c01.i01
+
+c11_i11_vfcc:
+    - c11.i11
+
+music_parent:
+    - music.parent
+
+innerdns_primer:
+    - innerdns-primer
+
+bossapi:
+    - bossapi
+
+gz_public:
+    - c02.p02
+    - c08.p08
+    - c01.i02
+    - c06.i64
+    - c01.i01
+    - c11.i11
+    - music.parent
+
+proclog:
+    - c77.i77
+
+c08p08_vfcc:
+    - c08.p08
+
+hekaforlive:
+    - c77.i77
+    - f01.i01
+    - f01.s01
+    - f01.p02
+    - f01.c01
+    - c57.i57
+    - r01.i01
+    - r01.i11
+    - c47.i47
+
+innerdns:
+    - inerdns
+
+s01p02_gd:
+    - s01.p02_gd
+
+c02p02_fcd:
+    - c02.p02
+
+c01i02_fcd:
+    - c01.i02
+    - c06.i64
+
+proc_fastcache:
+    - c01.p02
+    - s01.p02
+    - c97.p97
+    - wasu_parent
+    - c01.p06
+    - c01.i07
+    - c01.i77
+    - parent_fcd_anzhi
+    - xinlan.404.huiyuan
+    - c97.i97
+    - xjgd
+    - m01.i28
+    - c01.p01
+    - s01.p01
+    - s01.p32
+    - c05.i08
+    - c01.i08
+    - yicai_parent
+    - c06.i06
+    - c01.i35
+    - c01.i05
+    - c06.i16
+
+proc_fcd_cluster:
+    - c01.p01
+    - c01.p02
+    - s01.p02
+
+proc_flashShitD:
+    - c01.i07
+    - c01.i77
+    - xjgd
+    - xinlan.404.huiyuan
+    - c01.i08
+    - c01.i35
+    - c01.i05
+    - c97.i97
+    - m01.i28
+
+proc_nginx:
+    - c01.i08
+    - c01.i07
+    - d03.i12
+    - src.tongzhuo100.mirror
+    - m01.i68
+    - c01.p05
+    - xjgd
+    - c06.i06
+    - c01.i05
+    - c06.i16
+    - loongstore_nginx_conf
+    - c01.i08
+    - s01.p02_gd
+    - s01.p32
+    - qfs_fj_general_metadata
+    - qfs_zj_hntv_metadata
+    - qfs_zj_general_metadata
+    - qfs_fj_general
+    - qfs_zj_hntv
+    - qfs_zj_general
+    - qfs_hntv_ningbo
+    - qfs.storage.qq
+
+proc_pzs:
+    - c77.i77
+    - r01.i11
+    - c47.i47
+    - r01.i01
+    - c01.n02
+    - c01.n01
+    - r01.t01
+    - r01.p01
+    - c57.i57
+    - chunwan-vip
+
+proc_fastmedia:
+    - f01.i01
+    - f01.c01
+    - f01.s01
+    - f01.p02
+    - fastmedia_transcoding
+
+proc_rsync:
+    - m01.i09
+    - m01.i04
+    - src.tongzhuo100.mirror
+    - m01.i68
+    - c01.p05
+    - src.tongzhuo100.mirror
+    - qfs_fj_general_metadata
+
+proc_cronolog:
+    - m01.i09
+
+lvs:
+    - lvs
+
+smallbasic:
+    - IDC-Test
+    - owl
+
+publicbasic:
+    - Owl_Default_Group
+
+http:
+    - c01.p02
+    - s01.p02
+    - c97.p97
+    - c01.p06
+    - c01.i16
+    - c01.i77
+    - c01.i07
+    - c97.i97
+    - c05.i08
+    - c01.i08
+    - m01.i09
+    - m01.i99
+    - m01.i28
+    - m01.i04
+    - m01.i68
+    - c01.p01
+    - s01.p01
+    - s01.p32
+    - c06.i06
+    - c01.i35
+    - c02.i03
+    - c01.i05
+    - c06.i16
+    - c01.p05
+    - c06.i86
+    - c06.i76
+    - c01.i02.s01
+    - c06.i96
+
+FWservice:
+    - c01.p02
+    - s01.p02
+    - c97.p97
+    - c01.p06
+    - xinlan.404.huiyuan
+    - c01.i16
+    - c01.i77
+    - c01.i07
+    - c97.i97
+    - c05.i08
+    - c01.i08
+    - d03.i12
+    - m01.i09
+    - m01.i99
+    - m01.i28
+    - c06.i16
+    - c01.i05
+    - c01.i35
+    - c06.i06
+    - s01.p32
+    - s01.p01
+    - c01.p01
+    - m01.i68
+    - m01.i28
+    - m01.i99
+    - m01.i09
+    - c01.i08
+    - c05.i08
+    - c97.i97
+    - c01.i07
+    - c01.p06
+    - c97.p97
+    - s01.p02
+    - c01.p02
+    - m01.i04
+    - m01.i68
+    - c01.p01
+    - s01.p01
+    - s01.p32
+    - c06.i06
+    - c01.i35
+    - c02.i03
+    - c01.i05
+    - c06.i16
+    - c01.p05
+    - c06.i86
+    - c06.i76
+    - c01.i02.s01
+    - c06.i96
+    - wasu_parent
+
+heka:
+    - c97.i97
+    - c06.i06
+    - m01.i28
+
+c01p01heka:
+    - c01.p01
+
+http_for_live:
+    - f01.i01
+    - f01.c01
+    - f01.s01
+    - f01.p02
+    - f01.p01
+    - c77.i77
+    - r01.i01
+    - r01.i11
+    - c47.i47
+    - c01.n02
+    - c01.n01
+    - r01.t01
+    - r01.p01
+    - c57.i57
+    - fastmedia_transcoding
+    - hls_auth
+    - ssport_HLS_302
+
+service_for_live:
+    - f01.i01
+    - f01.c01
+    - f01.s01
+    - f01.p02
+    - f01.p01
+    - c77.i77
+    - c47.i47
+    - c01.n02
+    - c01.n01
+    - r01.t01
+    - r01.p01
+    - c57.i57
+    - fastmedia_transcoding
+    - hls_auth
+    - ssport_HLS_302
+
+listen_80_port:
+    - s01.p02
+    - c97.p97
+    - c97.i97
+    - c01.p01
+    - c01.p02
+    - c06.i64
+    - d03.i12
+    - wasu_parent
+    - xjgd
+    - c01.p06
+    - parent_fcd_anzhi
+    - xinlan.404.huiyuan
+    - yicai_parent
+    - ssport_HLS_302
+    - s01.p01
+    - c01.i05
+    - c01.i07
+    - c01.i77
+    - c05.i08
+    - c01.i08
+    - m01.i04
+    - m01.i09
+    - m01.i99
+    - m01.i68
+    - s01.p32
+    - c06.i06
+    - c01.i35
+    - c06.i16
+    - c01.p05
+    - f01.c01
+    - f01.s01
+    - f01.p01
+    - c77.i77
+    - c47.i47
+    - c57.i57
+    - c01.n02
+    - c01.n01
+    - loongstore_nginx_conf
+    - r01.i01
+    - r01.i11
+    - m01.i28
+    - c97.i97
+    - src.tongzhuo100.mirror
+    - r01.i11
+    - qfs_zj_hntv_metadata
+    - qfs_zj_general_metadata
+    - qfs_fj_general
+    - qfs_zj_hntv
+    - qfs_zj_general
+    - qfs_hntv_ningbo
+    - qfs.storage.qq
+    - bossapi
+    - chunwan-vip
+
+listen_8000_port:
+    - r01.i01
+    - r01.p01
+    - r01.t01
+    - c01.n01
+    - c01.n02
+    - c57.i57
+    - c47.i47
+    - c77.i77
+    - xjgd
+    - xinlan.404.huiyuan
+    - c06.i16
+    - c01.i08
+    - s01.p32
+    - m01.i28
+    - c01.i07
+    - c01.i77
+    - c06.i06
+    - parent_fcd_anzhi
+    - r01.i11
+
+listen_6497_port:
+    - bossapi
+
+listen_875_port:
+    - c06.i16
+    - qfs_fj_general_metadata
+    - bossapi
+
+listen_1935_port:
+    - r01.i01
+    - r01.i11
+    - r01.t01
+    - r01.p01
+    - fastmedia_transcoding
+    - c01.n01
+    - c01.n02
+    - c57.i57
+    - c47.i47
+    - c77.i77
+    - f01.p02
+    - f01.s01
+    - f01.c01
+    - f01.i01
+    - m01.i09
+    - m01.i99
+    - m01.i04
+
+listen_443_port:
+    - c01.i07
+    - c06.i06
+    - xjgd
+    - c01.i35
+    - c06.i16
+    - c01.p05
+    - c01.i08
+    - c01.i05
+
+listen_843_port:
+    - c01.i07
+    - c01.i77
+    - xjgd
+    - xinlan.404.huiyuan
+    - c01.i08
+    - m01.i28
+    - c01.i35
+    - c97.i97
+    - c01.i05
+
+listen_8500_port:
+    - r01.i01
+    - r01.p01
+    - c01.n01
+    - c01.n02
+    - r01.i11
+    - c77.i77
+    - c47.i47
+    - c57.i57
+
+listen_873_port:
+    - m01.i04
+    - bossapi
+
+listen_8899_port:
+    - fastmedia_transcoding
+    - f01.i01
+    - f01.c01
+    - f01.p02
+    - f01.s01
+
+listen_8080_port:
+    - m01.i04
+    - m01.i09
+    - m01.i99
+
+listen_90_port:
+    - s01.p32
+
+listen_1119_port:
+    - src.tongzhuo100.mirror
+    - m01.i68
+
+listen_8889_port:
+    - f01.i01
+    - f01.c01
+    - f01.s01
+
+listen_81_port:
+    - c77.i77
+    - c47.i47
+    - c57.i57
+    - qfs_zj_hntv_metadata
+
+listen_3306_port:
+    - innerdns-primer
+    - qfs_zj_hntv_metadata
