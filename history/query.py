@@ -137,5 +137,8 @@ if __name__ == "__main__":
         password = conf["pass"]
     sig = login(user, password)
     endpoints = hostgroup2hostnames(user, sig, platform)
+    if len(endpoints) == 0:
+        print json.dumps({"message":"Platform is null. No endpoints inside."})
+        sys.exit(0)
     raw = aggregate(user, sig, (ts - 300) , ts, endpoints) # 5mins ago  - now 
     print formatting(raw, platform, endpoints, ts)
