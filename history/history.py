@@ -33,7 +33,7 @@ def hostgroup2hostnames(user, sig, hostgroup):
         res.append(i["hostname"])
     return res
 
-def history(user, sig, starTs, endTs, platform, hostnameFilters):
+def history(user, sig, startTs, endTs, platform, hostnameFilters):
     url = "http://owl.fastweb.com.cn/api/v2/portal/eventcases/get"
     if startTs >= endTs:
         print " start timestamp bigger than end timestamp"
