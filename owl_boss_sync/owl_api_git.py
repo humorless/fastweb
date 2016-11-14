@@ -197,12 +197,14 @@ def get_hostgroups_api(conf):
     namePart = [
         item["name"] for item in hosts
     ]
+    platformTemp = item["platforms"].split(',')
+    platformTemp.append('Owl_Default_Group')
     valuePart = [
         {
             'active': item["activate"],
             'ip': [item["ip"]],
             'ip_count': 1,
-            'platform': item["platforms"].split(',')
+            'platform': platformTemp
         } for item in hosts
     ]
     res = dict(zip(namePart,valuePart))
