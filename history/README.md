@@ -6,13 +6,14 @@ for the error `ImportError: no module named request`
 in Ubuntu
 ```
 sudo apt-get install request
+sudo apt-get install python-yaml
 ```
 
 
 in CentOS
 
 ```
-yum install python-setuptools
+yum install python-yaml
 yum install python-pip
 pip install requests
 
