@@ -122,13 +122,14 @@ def readConf():
             print(exc)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 4:
         print "query.py returns the 5 minute average of five platform metrics."
-        print "usage: ./query.py  [platformName]"
-        print "example: ./query.py  c01.i01"
+        print "usage: ./query.py [timestampStart] [timestampEnd] [platformName]"
+        print "example: ./query.py  1478700000 1478764076 c01.i01"
         sys.exit(1) 
-    ts = int(time.time()) # input
-    platform = sys.argv[1]     # input
+    startTs = int(sys.argv[1])      # input
+    endTs = int(sys.argv[2])      # input
+    platform = sys.argv[3]     # input
     user = ""      # data
     password = ""    # data
     conf = readConf()
@@ -138,7 +139,8 @@ if __name__ == "__main__":
     sig = login(user, password)
     endpoints = hostgroup2hostnames(user, sig, platform)
     if len(endpoints) == 0:
-        print json.dumps({"message":"Platform is null. No endpoints inside."})
+        #print json.dumps({"message":"Platform is null. No endpoints inside."})
+        print json.dumps(False)
         sys.exit(0)
-    raw = aggregate(user, sig, (ts - 300) , ts, endpoints) # 5mins ago  - now 
-    print formatting(raw, platform, endpoints, ts)
+    raw = aggregate(user, sig, startTs , endTs, endpoints) # 5mins ago  - now
+    print formatting(raw, platform, endpoints, startTs)
