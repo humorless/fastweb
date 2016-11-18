@@ -110,7 +110,7 @@ def formatAggre(raw, platform, endpoints, ts):
         for item in middle:
             if e == item["hostname"]:
                 out[item["metric"]] = item["value"]
-                result.append(out)
+        result.append(out)
 
     # return json.dumps(result)
 
@@ -230,7 +230,7 @@ def formatHttpGetTime(raw, platform, endpoints, ts):
         for item in middle:
             if e == item["hostname"]:
                 out["data"] = item["value"]
-                result.append(out)
+        result.append(out)
 
     # return json.dumps(result)
 
