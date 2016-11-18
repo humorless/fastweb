@@ -97,7 +97,7 @@ def formatting(raw, platform, endpoints, ts):
         for item in middle:
             if e == item["hostname"]:
                 out[item["metric"]] = item["value"]
-                result.append(out)
+        result.append(out)
     
     #return json.dumps(result)
 
