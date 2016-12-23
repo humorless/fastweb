@@ -61,7 +61,10 @@ def history(user, sig, startTs, endTs, platform, hostnameFilters):
                 "hostname": i["hostname"],
                 "ip": i["ip"],
                 "content": i["content"],
-                "metric": i["metric"]
+                "metric": i["metric"],
+                "severity": i["severity"],
+                "status": i["status"],
+                "process": i["process"]
             }
             result.append(item)
 
@@ -89,7 +92,7 @@ def readConf():
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print "usage: ./history.py [timestampStart] [timestampEnd] [platformName]"
-        print "example: ./history.py 1478700000 1478764076 c01.i01"
+        print "example: ./history.py  1478700000 1478764076 c01.i07"
         sys.exit(1) 
     #ts = int(time.time()) # input
     #platform = "c06.i06"  # input
