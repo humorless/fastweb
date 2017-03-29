@@ -6,17 +6,28 @@ for the error `ImportError: no module named request`
 in Ubuntu
 ```
 sudo apt-get install request
-sudo apt-get install python-yaml
 ```
 
 
 in CentOS
 
 ```
-yum install python-yaml
 yum install python-pip
 pip install requests
 
+```
+
+for yaml dependency
+
+use
+```
+pip install pyyaml
+```
+
+or
+```
+sudo apt-get install python-yaml  # in ubuntun
+yum install python-yaml           # in CentOS
 ```
 
 # setup 
